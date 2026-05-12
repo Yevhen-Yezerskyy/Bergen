@@ -43,7 +43,7 @@ services:
     volumes:
       - ./logs:/logs
       - ./:/app
-    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    command: ["python", "manage.py", "runserver", "--insecure", "0.0.0.0:8000"]
 
   bergen-grand-web-dev:
     image: bergen-python:latest
@@ -61,7 +61,7 @@ services:
     volumes:
       - ./logs:/logs
       - ./:/app
-    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    command: ["python", "manage.py", "runserver", "--insecure", "0.0.0.0:8000"]
 
   bergen-web-prod:
     image: bergen-python:latest
