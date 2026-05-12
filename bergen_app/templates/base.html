@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice in Baden-Baden{% endblock %}</title>
+    <meta name="keywords" content="{% block keywords %}Bergen Immobilienservice GmbH, Bau, Sanierung, Immobilienverwaltung, Gebäudeservice, Renovierung, Modernisierung, Instandhaltung, Hausmeisterservice, Wohnimmobilien, Gewerbeimmobilien, Mehrfamilienhaus, Bauunternehmen, Baden-Baden{% endblock %}">
+    <meta name="description" content="{% block description %}Bergen Immobilienservice GmbH in Baden-Baden: Bau, Sanierung, Immobilienverwaltung und Gebäudeservice für Wohn- und Gewerbeimmobilien. Persönlich, zuverlässig und praxisnah betreut.{% endblock %}">
+    <meta name="robots" content="{% block meta_robots %}index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1{% endblock %}">
+    <link rel="canonical" href="{% block canonical_url %}https://bergen-immobilienservice.com{{ request.path }}{% endblock %}">
+    <link rel="alternate" hreflang="de-DE" href="{% block hreflang_de %}https://bergen-immobilienservice.com{{ request.path }}{% endblock %}">
+    <link rel="alternate" hreflang="x-default" href="https://bergen-immobilienservice.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Bergen Immobilienservice GmbH">
+    <meta property="og:url" content="{% block og_url %}https://bergen-immobilienservice.com{{ request.path }}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice in Baden-Baden{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Bau, Sanierung, Immobilienverwaltung und Gebäudeservice in Baden-Baden für Wohn- und Gewerbeimmobilien. Zuverlässig, koordiniert und persönlich betreut.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'img/opg.jpg' %}{% endblock %}">
+    <meta property="og:image:alt" content="{% block og_image_alt %}Bergen Immobilienservice GmbH in Baden-Baden{% endblock %}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Bergen Immobilienservice GmbH in Baden-Baden: Bau, Sanierung, Immobilienverwaltung und Gebäudeservice für Wohn- und Gewerbeimmobilien.{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'img/opg.jpg' %}{% endblock %}">
+    <meta name="twitter:image:alt" content="{% block twitter_image_alt %}Bergen Immobilienservice GmbH in Baden-Baden{% endblock %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="{% static 'img/icon.svg' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=20260430-14">
+    {% block json_ld %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Bergen Immobilienservice GmbH",
+      "url": "https://bergen-immobilienservice.com/",
+      "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'img/opg.jpg' %}",
+      "description": "Bau, Sanierung, Immobilienverwaltung und Gebäudeservice in Baden-Baden.",
+      "telephone": "+49 7221 771 3039",
+      "email": "grand878@icloud.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bertholdstr. 6",
+        "postalCode": "76530",
+        "addressLocality": "Baden-Baden",
+        "addressCountry": "DE"
+      }
+    }
+    </script>
+    {% endblock %}
+</head>
+<body
+    data-cookie-consent-analytics="{% if cookie_consent_analytics %}1{% else %}0{% endif %}"
+    data-cookie-consent-external-media="{% if cookie_consent_external_media %}1{% else %}0{% endif %}"
+    data-cookie-has-consent="{% if cookie_has_consent %}1{% else %}0{% endif %}"
+    data-cookie-banner-closed="{% if cookie_banner_closed %}1{% else %}0{% endif %}"
+>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container brand-wrap">
+                <a class="brand-logo" href="{% url 'index' %}" aria-label="Bergen Immobilienservice">
+                    <img src="{% static 'img/logo.svg' %}" alt="Logo der Bergen Immobilienservice GmbH">
+                </a>
+                <p class="brand-subtitle">BERGEN IMMOBILIENSERVICE</p>
+            </div>
+        </div>
+        <div class="header-nav-line">
+            <div class="container">
+                <nav class="main-nav" aria-label="Hauptnavigation">
+                    <a href="{% url 'index' %}" data-nav-target="home">HOME</a>
+                    <a href="{% url 'leistungsbereiche' %}" data-nav-target="leistungsbereiche">LEISTUNGSBEREICHE</a>
+                    <a href="{% url 'index' %}#uber-uns" data-nav-target="uber-uns">UBER UNS</a>
+                    <a href="{% url 'erfahrung' %}" data-nav-target="erfahrung">ERFAHRUNG</a>
+                    <a href="{% url 'index' %}#kontakt" data-nav-target="kontakt">KONTAKT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <section class="project-cta">
+        <div class="container project-cta-content">
+            <p class="project-cta-topline">Präzision in jedem Gewerk</p>
+            <h2>Bereit für Ihr nächstes Projekt?</h2>
+            <p class="project-cta-description">Lassen Sie uns gemeinsam den Grundstein für den Werterhalt Ihrer Immobilie legen.<br>Persönlich, kompetent und direkt vor Ort.</p>
+        </div>
+    </section>
+
+    <section id="kontakt" class="contacts-block">
+        <div class="container">
+            <h2 class="contacts-title">Kontakt</h2>
+        </div>
+        <div class="contacts-divider-wrap">
+            <div class="contacts-divider"></div>
+        </div>
+        <div class="contacts-body">
+            <div class="container">
+                <div class="contacts-grid">
+                    <div class="contacts-left">
+                    <p class="contacts-company"><span class="contacts-company-name">Bergen Immobilienservice GmbH</span><br><span class="contacts-company-address">Bertholdstr. 6, D-76530 Baden-Baden</span></p>
+                        <div class="contacts-table" aria-label="Kontaktdaten">
+                            <div class="contacts-row">
+                                <div class="contacts-key">Tel</div>
+                                <div class="contacts-val">
+                                    <a href="tel:+4972217713039">+49 7221 771 3039</a><br>
+                                    <a href="tel:+4972217022660">+49 7221 702 2660</a>
+                                </div>
+                            </div>
+                            <div class="contacts-row">
+                                <div class="contacts-key">Mobile</div>
+                                <div class="contacts-val">
+                                    <a href="tel:+4917680135357">+49 1768 013 5357</a>
+                                </div>
+                            </div>
+                            <div class="contacts-row">
+                                <div class="contacts-key">E-Mail</div>
+                                <div class="contacts-val">
+                                    <a href="mailto:grand878@icloud.com">grand878@icloud.com</a><br>
+                                    <a href="mailto:a.bergen@mail.de">a.bergen@mail.de</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contacts-map">
+                        <div class="map-consent" data-map-container data-map-src="https://www.google.com/maps?q=Bertholdstr.%206,%2076530%20Baden-Baden&z=17&output=embed"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-brand-wrap">
+            <a class="brand-logo" href="{% url 'index' %}" aria-label="Bergen Immobilienservice">
+                <img src="{% static 'img/logo.svg' %}" alt="Logo der Bergen Immobilienservice GmbH">
+            </a>
+            <p class="brand-subtitle">BERGEN IMMOBILIENSERVICE</p>
+        </div>
+    </footer>
+    <div class="site-footer-menu">
+        <div class="container footer-menu-wrap">
+            <nav class="footer-nav" aria-label="Footer Services">
+                <a href="{% url 'leistungsbereiche' %}#bau" data-nav-target="leistungsbereiche">BAU</a>
+                <a href="{% url 'leistungsbereiche' %}#sanierung" data-nav-target="leistungsbereiche">SANIERUNG</a>
+                <a href="{% url 'leistungsbereiche' %}#immobilienverwaltung" data-nav-target="leistungsbereiche">IMMOBILIENVERWALTUNG</a>
+                <a href="{% url 'leistungsbereiche' %}#gebaeudeservice" data-nav-target="leistungsbereiche">GEBAUDESERVICE</a>
+            </nav>
+            <nav class="footer-nav" aria-label="Footer Main">
+                <a href="{% url 'index' %}" data-nav-target="home">HOME</a>
+                <a href="{% url 'index' %}#uber-uns" data-nav-target="uber-uns">UBER UNS</a>
+                <a href="{% url 'erfahrung' %}" data-nav-target="erfahrung">ERFAHRUNG</a>
+                <a href="{% url 'index' %}#kontakt" data-nav-target="kontakt">KONTAKT</a>
+            </nav>
+        </div>
+    </div>
+    <div class="site-footer-legal">
+        <div class="container footer-legal-wrap">
+            <p>© 2026 Bergen Immobilienservice GmbH. Alle Rechte vorbehalten.</p>
+            <nav aria-label="Legal Navigation">
+                <a href="{% url 'impressum' %}">Impressum</a>
+                <a href="{% url 'datenschutz' %}">Datenschutz</a>
+                <a href="#cookie-einstellungen" data-cookie-open-settings>Cookie-Einstellungen</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="cookie-consent" data-cookie-banner hidden>
+        <div class="cookie-consent-inner">
+            <div class="cookie-consent-head">
+                <p class="cookie-consent-title">Datenschutz-Einstellungen</p>
+                <button type="button" class="cookie-toggle-button" data-cookie-toggle-settings aria-expanded="false">Einstellungen</button>
+            </div>
+            <p class="cookie-consent-text">Wir verwenden notwendige Cookies sowie optionale Dienste für Statistik und externe Medien. Sie können Ihre Auswahl jederzeit ändern.</p>
+            <div class="cookie-consent-actions">
+                <button type="button" class="cookie-btn cookie-btn-primary" data-cookie-accept-all>Alle akzeptieren</button>
+                <button type="button" class="cookie-btn cookie-btn-neutral" data-cookie-accept-necessary>Nur notwendige</button>
+                <button type="button" class="cookie-btn cookie-btn-ghost" data-cookie-close-banner>Schließen</button>
+            </div>
+
+            <div class="cookie-consent-panel" data-cookie-settings-panel hidden>
+                <label class="cookie-option cookie-option-fixed">
+                    <input type="checkbox" checked disabled>
+                    <span><strong>Notwendige Cookies</strong><br>Erforderlich für Grundfunktionen der Website.</span>
+                </label>
+
+                <label class="cookie-option">
+                    <input type="checkbox" data-cookie-setting="analytics">
+                    <span><strong>Statistik</strong><br>Hilft uns, die Website-Nutzung zu verstehen und zu verbessern.</span>
+                </label>
+
+                <label class="cookie-option">
+                    <input type="checkbox" data-cookie-setting="external_media">
+                    <span><strong>Externe Medien</strong><br>Erlaubt das Laden externer Inhalte wie Google Maps.</span>
+                </label>
+
+                <div class="cookie-consent-actions cookie-consent-actions-secondary">
+                    <button type="button" class="cookie-btn cookie-btn-primary" data-cookie-save-selection>Auswahl speichern</button>
+                    <button type="button" class="cookie-btn cookie-btn-neutral" data-cookie-accept-necessary>Nur notwendige</button>
+                    <button type="button" class="cookie-btn cookie-btn-ghost" data-cookie-accept-all>Alle akzeptieren</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/main.js' %}?v=20260430-14"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice in Baden-Baden{% endblock %}
+{% block description %}Bergen Immobilienservice GmbH in Baden-Baden bietet Bau, Sanierung, Immobilienverwaltung und Gebäudeservice für Wohn- und Gewerbeimmobilien. Persönliche Betreuung und verlässliche Umsetzung aus einer Hand.{% endblock %}
+{% block og_title %}Bergen Immobilienservice GmbH in Baden-Baden{% endblock %}
+{% block og_description %}Bau, Sanierung, Immobilienverwaltung und Gebäudeservice in Baden-Baden für Wohn- und Gewerbeobjekte. Persönlich betreut und zuverlässig umgesetzt.{% endblock %}
+{% block twitter_title %}Bergen Immobilienservice GmbH in Baden-Baden{% endblock %}
+{% block twitter_description %}Bau, Sanierung, Immobilienverwaltung und Gebäudeservice für Wohn- und Gewerbeimmobilien in Baden-Baden.{% endblock %}
+{% block canonical_url %}https://bergen-immobilienservice.com/{% endblock %}
+{% block og_url %}https://bergen-immobilienservice.com/{% endblock %}
+
+{% block content %}
+<section class="index-main-image">
+    <div class="container">
+        <div class="main-image-wrap">
+            <img src="{% static 'img/main.jpg' %}" alt="Bergen Immobilienservice in Baden-Baden: Bau, Sanierung, Immobilienverwaltung und Gebäudeservice">
+            <div class="main-image-caption">
+                <p class="main-image-caption-title">Bau, Sanierung, Immobilienverwaltung und Gebäudeservice</p>
+                <p class="main-image-caption-text">Für Wohn- und Gewerbeimmobilien – zuverlässig, koordiniert und persönlich betreut.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="index-services">
+    <div class="container">
+        <div class="services-grid">
+            <article class="service-card">
+                <a class="service-card-link" href="{% url 'leistungsbereiche' %}#bau">
+                    <img src="{% static 'img/work-1.jpg' %}" alt="Bauleistungen für Wohn- und Gewerbeimmobilien in Baden-Baden">
+                    <div class="service-card-label">BAU</div>
+                </a>
+            </article>
+            <article class="service-card">
+                <a class="service-card-link" href="{% url 'leistungsbereiche' %}#sanierung">
+                    <img src="{% static 'img/work-2.jpg' %}" alt="Sanierungsarbeiten und Modernisierung von Immobilien in Baden-Baden">
+                    <div class="service-card-label">SANIERUNG</div>
+                </a>
+            </article>
+            <article class="service-card">
+                <a class="service-card-link" href="{% url 'leistungsbereiche' %}#immobilienverwaltung">
+                    <img src="{% static 'img/work-3.jpg' %}" alt="Immobilienverwaltung für Wohn- und Gewerbeobjekte in Baden-Baden">
+                    <div class="service-card-label">IMMOBILIENVERWALTUNG</div>
+                </a>
+            </article>
+            <article class="service-card">
+                <a class="service-card-link" href="{% url 'leistungsbereiche' %}#gebaeudeservice">
+                    <img src="{% static 'img/work-4.jpg' %}" alt="Gebäudeservice und laufende Objektbetreuung in Baden-Baden">
+                    <div class="service-card-label">GEBAUDESERVICE</div>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="uber-uns" class="index-about-heading">
+    <div class="container">
+        <h2 class="contacts-title">Über uns</h2>
+    </div>
+    <div class="contacts-divider-wrap">
+        <div class="contacts-divider"></div>
+    </div>
+</section>
+
+<section class="index-about">
+    <div class="container">
+        <div class="index-about-grid">
+            <div class="index-about-image">
+                <img src="{% static 'img/about.jpg' %}" alt="Bergen Immobilienservice Team bei der Betreuung eines Immobilienprojekts in Baden-Baden">
+                <div class="index-about-caption">
+                    <p class="index-about-caption-title">VIP - Service für alle</p>
+                    <p class="index-about-caption-text">Schnell Qualitativ Zuverlässig</p>
+                </div>
+            </div>
+            <div class="index-about-content">
+                <p><strong>Bergen Immobilienservice GmbH</strong> ist ein Unternehmen aus Baden-Baden für Bau, Sanierung, Immobilienverwaltung und Gebäudeservice. Die Arbeit basiert auf praktischer Erfahrung, persönlicher Führung, Qualitätskontrolle und guter Kenntnis des lokalen Immobilienmarktes.</p>
+
+                <h3>Bau</h3>
+                <p>Das Unternehmen übernimmt Bauarbeiten für Wohn- und Gewerbeobjekte - von einzelnen Leistungen bis zu größeren Projekten. Möglich ist die Ausführung als General- oder Subunternehmer.</p>
+
+                <h3>Sanierung</h3>
+                <p><strong>Bergen Immobilienservice GmbH</strong> saniert, renoviert und modernisiert Gebäude, Wohnungen, Häuser und Gewerbeflächen. Ziel ist es, Immobilien zu erhalten, zu erneuern und aufzuwerten.</p>
+
+                <h3>Immobilienverwaltung</h3>
+                <p>Das Unternehmen betreut Wohn- und Gewerbeimmobilien in Verwaltung, Vermietung, technischen Fragen und laufenden Objektaufgaben. Die Marktkenntnis in Baden-Baden hilft, Eigentümer- und Mieterinteressen praxisnah zu berücksichtigen.</p>
+
+                <h3>GEBAUDESERVICE</h3>
+                <p>Der Gebäudeservice umfasst regelmäßige Betreuung, Zustandskontrolle, laufende Reparaturen und Organisation notwendiger Arbeiten. Ein erfahrenes eigenes Team und persönliche Kontrolle durch die Leitung sichern die Umsetzung.</p>
+
+                <p><strong>Bergen Immobilienservice GmbH</strong> ist seit über 9 Jahren in diesem Bereich tätig und steht für Verantwortung, professionelle Organisation und zuverlässige Objektbetreuung.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="index-erfahrung-heading">
+    <div class="container">
+        <h2 class="contacts-title">Erfahrung</h2>
+    </div>
+    <div class="contacts-divider-wrap">
+        <div class="contacts-divider"></div>
+    </div>
+</section>
+
+<section class="index-erfahrung">
+    <div class="container">
+        <div class="index-erfahrung-grid">
+            <article class="index-erfahrung-card">
+                <h3>Neubau</h3>
+                <a href="{% url 'erfahrung' %}#neubau" aria-label="Mehrfamilienhaus – Baden-Baden. Modernisiertes Wohnhaus mit 12 Wohneinheiten, Balkonen und gepflegter Außenanlage. Ca. 850 m² Wohnfläche.">
+                    <img src="{% static 'img/exp-01.jpg' %}" alt="Neubau-Projekt Mehrfamilienhaus in Baden-Württemberg mit Balkonen und Außenanlage">
+                    <span class="index-erfahrung-arrow" aria-hidden="true"></span>
+                </a>
+            </article>
+            <article class="index-erfahrung-card">
+                <h3>Sanierung</h3>
+                <a href="{% url 'erfahrung' %}#sanierung" aria-label="Bestandsgebäude – Baden-Baden. Saniertes Wohnhaus aus den 1950er-Jahren mit neuer Dacheindeckung, modernen Fenstern und gepflegter Fassade. Ca. 6–8 Wohneinheiten.">
+                    <img src="{% static 'img/exp-san-1.jpg' %}" alt="Sanierungsprojekt Bestandsgebäude in Baden-Württemberg mit modernisierter Fassade">
+                    <span class="index-erfahrung-arrow" aria-hidden="true"></span>
+                </a>
+            </article>
+            <article class="index-erfahrung-card">
+                <h3>Immobilienverwaltung</h3>
+                <a href="{% url 'erfahrung' %}#immobilienverwaltung" aria-label="Townhouse-Ensemble – Baden-Baden. Vier moderne Reihenhäuser mit klarer Architektur, privaten Eingängen und gepflegten Außenbereichen. Je Einheit ca. 135–160 m² Wohnfläche.">
+                    <img src="{% static 'img/exp-man-1.jpg' %}" alt="Verwaltetes Townhouse-Ensemble in Baden-Württemberg mit gepflegten Außenbereichen">
+                    <span class="index-erfahrung-arrow" aria-hidden="true"></span>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="index-values">
+    <div class="container">
+        <div class="values-grid">
+            <div class="value-card">
+                <p class="value-label">WERTE</p>
+                <p class="value-title">Qualitat</p>
+            </div>
+            <div class="value-card">
+                <p class="value-label">STANDARDS</p>
+                <p class="value-title">Prazision</p>
+            </div>
+            <div class="value-card">
+                <p class="value-label">BASIS</p>
+                <p class="value-title">Vertrauen</p>
+            </div>
+            <div class="value-card">
+                <p class="value-label">ETHIK</p>
+                <p class="value-title">Diskretion</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
