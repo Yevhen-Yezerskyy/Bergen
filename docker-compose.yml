@@ -12,6 +12,8 @@ services:
     init: true
     working_dir: /app
     restart: unless-stopped
+    environment:
+      GIT_SSH_COMMAND: "ssh -F /dev/null -i /root/.ssh/id_ed25519_bergen_github -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
     volumes:
       - ./logs:/logs
       - bergen-app-prod:/app
