@@ -20,6 +20,20 @@ services:
       - /home/eee/.ssh:/root/.ssh:ro
     command: ["sleep", "infinity"]
 
+  bergen-grand-tools:
+    image: bergen-python:latest
+    container_name: bergen-grand-tools
+    init: true
+    working_dir: /app
+    restart: unless-stopped
+    environment:
+      GIT_SSH_COMMAND: "ssh -F /dev/null -i /root/.ssh/id_ed25519_bergen_github -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+    volumes:
+      - ./logs:/logs
+      - bergen-grand-app-prod:/app
+      - /home/eee/.ssh:/root/.ssh:ro
+    command: ["sleep", "infinity"]
+
   bergen-web-dev:
     image: bergen-python:latest
     container_name: bergen-web-dev
@@ -32,6 +46,23 @@ services:
       PYTHONPATH: /app/bergen_app
     ports:
       - "127.0.0.1:18004:8000"
+    volumes:
+      - ./logs:/logs
+      - ./:/app
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+  bergen-grand-web-dev:
+    image: bergen-python:latest
+    container_name: bergen-grand-web-dev
+    init: true
+    working_dir: /app/bergen_grand_app
+    restart: unless-stopped
+    environment:
+      DEBUG: "1"
+      DJANGO_INSTANCE: "bergen-grand-dev"
+      PYTHONPATH: /app/bergen_grand_app
+    ports:
+      - "127.0.0.1:18006:8000"
     volumes:
       - ./logs:/logs
       - ./:/app
@@ -62,6 +93,31 @@ services:
       - --timeout
       - "420"
 
+  bergen-grand-web-prod:
+    image: bergen-python:latest
+    container_name: bergen-grand-web-prod
+    init: true
+    working_dir: /app/bergen_grand_app
+    restart: unless-stopped
+    environment:
+      DEBUG: "0"
+      DJANGO_INSTANCE: "bergen-grand-prod"
+      PYTHONPATH: /app/bergen_grand_app
+    ports:
+      - "127.0.0.1:18007:8000"
+    volumes:
+      - ./logs:/logs
+      - bergen-grand-app-prod:/app
+    command:
+      - gunicorn
+      - bergen_grand_site.wsgi:application
+      - --bind
+      - 0.0.0.0:8000
+      - --workers
+      - "2"
+      - --timeout
+      - "420"
+
   bergen-nginx:
     image: nginx:1.26
     container_name: bergen-nginx
@@ -77,12 +133,17 @@ services:
         condition: service_started
       bergen-web-prod:
         condition: service_started
+      bergen-grand-web-dev:
+        condition: service_started
+      bergen-grand-web-prod:
+        condition: service_started
     volumes:
       - ./logs:/logs
       - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./config/nginx/conf.d:/etc/nginx/conf.d:ro
       - ./config/nginx/includes:/etc/nginx/includes:ro
       - bergen-app-prod:/app:ro
+      - bergen-grand-app-prod:/app-grand:ro
       - bergen-certbot-www:/var/www/certbot
       - bergen-certbot-etc:/etc/letsencrypt:ro
     command:
@@ -127,6 +188,8 @@ services:
 
 volumes:
   bergen-app-prod:
+    external: true
+  bergen-grand-app-prod:
     external: true
   bergen-certbot-etc:
     external: true

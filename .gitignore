@@ -10,3 +10,4 @@ logs/
 venv/
 
 bergen_app/static_collected/
+bergen_grand_app/static_collected/
