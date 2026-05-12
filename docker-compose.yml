@@ -17,22 +17,15 @@ services:
     volumes:
       - ./logs:/logs
       - bergen-app-prod:/app
+      - ./:/host
       - /home/eee/.ssh:/root/.ssh:ro
-    command: ["sleep", "infinity"]
-
-  bergen-grand-tools:
-    image: bergen-python:latest
-    container_name: bergen-grand-tools
-    init: true
-    working_dir: /app
-    restart: unless-stopped
-    environment:
-      GIT_SSH_COMMAND: "ssh -F /dev/null -i /root/.ssh/id_ed25519_bergen_github -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
-    volumes:
-      - ./logs:/logs
-      - bergen-grand-app-prod:/app
-      - /home/eee/.ssh:/root/.ssh:ro
-    command: ["sleep", "infinity"]
+    command:
+      - /bin/sh
+      - -lc
+      - |
+        git config --global --add safe.directory /app
+        git config --global --add safe.directory /host
+        sleep infinity
 
   bergen-web-dev:
     image: bergen-python:latest
@@ -44,6 +37,7 @@ services:
       DEBUG: "1"
       DJANGO_INSTANCE: "bergen-dev"
       PYTHONPATH: /app/bergen_app
+      PYTHONUNBUFFERED: "1"
     ports:
       - "127.0.0.1:18004:8000"
     volumes:
@@ -61,6 +55,7 @@ services:
       DEBUG: "1"
       DJANGO_INSTANCE: "bergen-grand-dev"
       PYTHONPATH: /app/bergen_grand_app
+      PYTHONUNBUFFERED: "1"
     ports:
       - "127.0.0.1:18006:8000"
     volumes:
@@ -107,7 +102,7 @@ services:
       - "127.0.0.1:18007:8000"
     volumes:
       - ./logs:/logs
-      - bergen-grand-app-prod:/app
+      - bergen-app-prod:/app
     command:
       - gunicorn
       - bergen_grand_site.wsgi:application
@@ -143,7 +138,6 @@ services:
       - ./config/nginx/conf.d:/etc/nginx/conf.d:ro
       - ./config/nginx/includes:/etc/nginx/includes:ro
       - bergen-app-prod:/app:ro
-      - bergen-grand-app-prod:/app-grand:ro
       - bergen-certbot-www:/var/www/certbot
       - bergen-certbot-etc:/etc/letsencrypt:ro
     command:
@@ -188,8 +182,6 @@ services:
 
 volumes:
   bergen-app-prod:
-    external: true
-  bergen-grand-app-prod:
     external: true
   bergen-certbot-etc:
     external: true
