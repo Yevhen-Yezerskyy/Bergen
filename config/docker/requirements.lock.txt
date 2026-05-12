@@ -1,0 +1,6 @@
+# FILE: config/docker/requirements.lock.txt
+# DATE: 2026-05-12
+# PURPOSE: Python runtime dependencies for Bergen Django containers.
+
+Django==6.0
+gunicorn==23.0.0

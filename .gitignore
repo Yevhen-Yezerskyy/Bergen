@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.sqlite3-journal
+
+logs/
+*.log
+
+.env
+.venv/
+venv/
+
+bergen_app/static_collected/

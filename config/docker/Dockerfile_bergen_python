@@ -1,0 +1,26 @@
+# FILE: config/docker/Dockerfile_bergen_python
+# DATE: 2026-05-12
+# PURPOSE: Shared Python runtime for Bergen dev, prod, and tools containers.
+
+FROM python:3.12-slim
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+      ca-certificates \
+      curl \
+      git \
+      less \
+      nano \
+      procps \
+      tzdata \
+      vim-tiny \
+ && rm -rf /var/lib/apt/lists/*
+
+COPY config/docker/requirements.lock.txt /tmp/requirements.lock.txt
+
+RUN python -m pip install --no-cache-dir -U pip \
+ && pip install --no-cache-dir -r /tmp/requirements.lock.txt \
+ && rm -f /tmp/requirements.lock.txt
+
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1

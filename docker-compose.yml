@@ -1,0 +1,132 @@
+# FILE: docker-compose.yml
+# DATE: 2026-05-12
+# PURPOSE: Bergen dev/prod Django stack with nginx and certbot renewer.
+
+services:
+  bergen-tools:
+    build:
+      context: .
+      dockerfile: config/docker/Dockerfile_bergen_python
+    image: bergen-python:latest
+    container_name: bergen-tools
+    init: true
+    working_dir: /app
+    restart: unless-stopped
+    volumes:
+      - ./logs:/logs
+      - bergen-app-prod:/app
+      - /home/eee/.ssh:/root/.ssh:ro
+    command: ["sleep", "infinity"]
+
+  bergen-web-dev:
+    image: bergen-python:latest
+    container_name: bergen-web-dev
+    init: true
+    working_dir: /app/bergen_app
+    restart: unless-stopped
+    environment:
+      DEBUG: "1"
+      DJANGO_INSTANCE: "bergen-dev"
+      PYTHONPATH: /app/bergen_app
+    ports:
+      - "127.0.0.1:18004:8000"
+    volumes:
+      - ./logs:/logs
+      - ./:/app
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+  bergen-web-prod:
+    image: bergen-python:latest
+    container_name: bergen-web-prod
+    init: true
+    working_dir: /app/bergen_app
+    restart: unless-stopped
+    environment:
+      DEBUG: "0"
+      DJANGO_INSTANCE: "bergen-prod"
+      PYTHONPATH: /app/bergen_app
+    ports:
+      - "127.0.0.1:18005:8000"
+    volumes:
+      - ./logs:/logs
+      - bergen-app-prod:/app
+    command:
+      - gunicorn
+      - bergen_site.wsgi:application
+      - --bind
+      - 0.0.0.0:8000
+      - --workers
+      - "2"
+      - --timeout
+      - "420"
+
+  bergen-nginx:
+    image: nginx:1.26
+    container_name: bergen-nginx
+    init: true
+    network_mode: host
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 4096
+    depends_on:
+      bergen-web-dev:
+        condition: service_started
+      bergen-web-prod:
+        condition: service_started
+    volumes:
+      - ./logs:/logs
+      - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./config/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./config/nginx/includes:/etc/nginx/includes:ro
+      - bergen-app-prod:/app:ro
+      - bergen-certbot-www:/var/www/certbot
+      - bergen-certbot-etc:/etc/letsencrypt:ro
+    command:
+      - /bin/sh
+      - -c
+      - |
+        set -e
+        mkdir -p /logs/nginx
+        chmod 777 /logs/nginx || true
+        exec nginx -g 'daemon off;'
+
+  bergen-certbot:
+    image: certbot/certbot:latest
+    container_name: bergen-certbot
+    init: true
+    restart: unless-stopped
+    pid: "service:bergen-nginx"
+    depends_on:
+      bergen-nginx:
+        condition: service_started
+    environment:
+      CERTBOT_EMAIL: "yevhen.yezerskyy@gmail.com"
+      CERTBOT_RENEW_EVERY_SEC: "43200"
+    volumes:
+      - ./logs:/logs
+      - bergen-certbot-www:/var/www/certbot
+      - bergen-certbot-etc:/etc/letsencrypt
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -eu
+        mkdir -p /logs/certbot
+        while true; do
+          certbot renew \
+            --webroot \
+            -w /var/www/certbot \
+            --quiet \
+            --deploy-hook "kill -HUP 1" \
+            >>/logs/certbot/renew.log 2>&1 || true
+          sleep "$${CERTBOT_RENEW_EVERY_SEC:-43200}"
+        done
+
+volumes:
+  bergen-app-prod:
+    external: true
+  bergen-certbot-etc:
+    external: true
+  bergen-certbot-www:
+    external: true
