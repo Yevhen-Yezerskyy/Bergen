@@ -1,8 +1,8 @@
 :root {
-    --bg: #f7f5f0;
-    --text: #172033;
-    --muted: #5d6878;
-    --accent: #9b7a3b;
+    --bg: #020817;
+    --text: #fff8da;
+    --muted: #9fc9ff;
+    --accent: #f7c84a;
 }
 
 * {
@@ -18,7 +18,10 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
-    background: var(--bg);
+    background:
+        radial-gradient(circle at 50% 28%, rgba(72, 177, 255, 0.48), transparent 28rem),
+        radial-gradient(circle at 50% 82%, rgba(255, 211, 76, 0.28), transparent 22rem),
+        linear-gradient(145deg, #010515 0%, #071943 48%, #020817 100%);
 }
 
 .page {
@@ -26,33 +29,51 @@ body {
     display: grid;
     place-items: center;
     padding: 32px 20px;
+    overflow: hidden;
 }
 
 .hero {
     width: min(100%, 900px);
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 7% 16% auto;
+    height: min(56vw, 430px);
+    border-radius: 50%;
+    background: rgba(70, 167, 255, 0.18);
+    filter: blur(42px);
+    transform: translateY(-8%);
+    z-index: -1;
+}
+
+.brand-mark {
+    display: block;
+    width: min(78vw, 520px);
+    height: auto;
+    margin: 0 auto;
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.5));
 }
 
 .eyebrow {
-    margin: 0 0 16px;
+    margin: 24px 0 0;
     color: var(--accent);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
+    text-shadow: 0 2px 18px rgba(247, 200, 74, 0.4);
 }
 
 h1 {
-    margin: 0;
-    font-size: clamp(48px, 9vw, 112px);
-    line-height: 0.95;
-    font-weight: 700;
-    letter-spacing: 0;
-}
-
-.intro {
-    max-width: 520px;
-    margin: 22px 0 0;
+    max-width: 620px;
+    margin: 14px auto 0;
     color: var(--muted);
-    font-size: 20px;
-    line-height: 1.45;
+    font-size: clamp(24px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: 0;
 }
