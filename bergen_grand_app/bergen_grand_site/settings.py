@@ -104,3 +104,8 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER or "info@bergen-grand.com")
 CONTACT_RECIPIENT_EMAIL = os.environ.get("CONTACT_RECIPIENT_EMAIL", "info@bergen-grand.com")
+CONTACT_CC_EMAILS = [
+    email.strip()
+    for email in os.environ.get("CONTACT_CC_EMAILS", "i.bergen@mail.de").split(",")
+    if email.strip()
+]

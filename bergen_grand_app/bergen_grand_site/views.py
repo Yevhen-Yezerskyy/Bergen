@@ -66,10 +66,15 @@ def send_contact_request(values):
         body=body,
         from_email=settings.DEFAULT_FROM_EMAIL,
         to=[settings.CONTACT_RECIPIENT_EMAIL],
+        cc=settings.CONTACT_CC_EMAILS,
         reply_to=reply_to or [],
     )
     email.send(fail_silently=False)
-    logger.info("Contact request sent to %s", settings.CONTACT_RECIPIENT_EMAIL)
+    logger.info(
+        "Contact request sent to %s with cc %s",
+        settings.CONTACT_RECIPIENT_EMAIL,
+        settings.CONTACT_CC_EMAILS,
+    )
     return True
 
 

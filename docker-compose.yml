@@ -63,6 +63,7 @@ services:
       EMAIL_HOST_PASSWORD: "${GRAND_EMAIL_HOST_PASSWORD:-}"
       DEFAULT_FROM_EMAIL: "${GRAND_DEFAULT_FROM_EMAIL:-info@bergen-grand.com}"
       CONTACT_RECIPIENT_EMAIL: "${GRAND_CONTACT_RECIPIENT_EMAIL:-info@bergen-grand.com}"
+      CONTACT_CC_EMAILS: "${GRAND_CONTACT_CC_EMAILS:-i.bergen@mail.de}"
     ports:
       - "127.0.0.1:18006:8000"
     volumes:
@@ -112,6 +113,7 @@ services:
       EMAIL_HOST_PASSWORD: "${GRAND_EMAIL_HOST_PASSWORD:-}"
       DEFAULT_FROM_EMAIL: "${GRAND_DEFAULT_FROM_EMAIL:-info@bergen-grand.com}"
       CONTACT_RECIPIENT_EMAIL: "${GRAND_CONTACT_RECIPIENT_EMAIL:-info@bergen-grand.com}"
+      CONTACT_CC_EMAILS: "${GRAND_CONTACT_CC_EMAILS:-i.bergen@mail.de}"
     ports:
       - "127.0.0.1:18007:8000"
     volumes:
