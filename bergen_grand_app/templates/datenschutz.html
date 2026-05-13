@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz | Privatschule GRAND Baden-Baden</title>
+    <meta name="description" content="Datenschutzerklärung der Privatschule GRAND in Baden-Baden mit Informationen zu Kontaktformular, Cookies, Google Analytics und Google Maps.">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0e2a47">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Privatschule GRAND">
+    <meta property="og:title" content="Datenschutz | Privatschule GRAND Baden-Baden">
+    <meta property="og:description" content="Datenschutzhinweise der Privatschule GRAND zu Kontaktformular, Cookies, Google Analytics und Google Maps.">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:image" content="{{ og_image_url }}">
+    <meta property="og:image:secure_url" content="{{ og_image_url }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Privatschule GRAND Baden-Baden">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Datenschutz | Privatschule GRAND Baden-Baden">
+    <meta name="twitter:description" content="Datenschutzhinweise zu Kontaktformular, Cookies, Google Analytics und Google Maps.">
+    <meta name="twitter:image" content="{{ og_image_url }}">
+    <link rel="icon" type="image/png" href="{% static 'img/logo_small.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/logo_small.png' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=20260513-11">
+</head>
+<body
+    data-cookie-consent-analytics="{% if cookie_consent_analytics %}1{% else %}0{% endif %}"
+    data-cookie-consent-external-media="{% if cookie_consent_external_media %}1{% else %}0{% endif %}"
+    data-cookie-has-consent="{% if cookie_has_consent %}1{% else %}0{% endif %}"
+    data-cookie-banner-closed="{% if cookie_banner_closed %}1{% else %}0{% endif %}"
+>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+    <header class="site-header" data-header>
+        <nav class="nav-shell" aria-label="Hauptnavigation">
+            <a class="brand" href="{% url 'index' %}#top" aria-label="Privatschule GRAND Baden-Baden">
+                <img src="{% static 'img/logo_small.png' %}" alt="" width="104" height="104">
+                <span>Privatschule GRAND</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="sr-only">Menü öffnen</span>
+            </button>
+
+            <div class="site-menu" id="site-menu" data-menu>
+                <a href="{% url 'index' %}#nachhilfe">Nachhilfe</a>
+                <a href="{% url 'index' %}#deutschkurse">Deutschkurse</a>
+                <a href="{% url 'index' %}#integration">Integration</a>
+                <a href="{% url 'index' %}#philosophie">Über uns</a>
+                <a href="{% url 'index' %}#kontakt">Kontakt</a>
+                <a class="nav-cta" href="{% url 'index' %}#kontakt">Anfrage stellen</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="legal-page" id="inhalt">
+        <section class="legal-page-shell">
+            <p class="section-kicker">Rechtliches</p>
+            <h1>Datenschutz</h1>
+            <div class="legal-content">
+                <p>
+                    Wir nehmen den Schutz personenbezogener Daten ernst. Personenbezogene Daten werden auf dieser Website nur verarbeitet, soweit dies für den Betrieb der Website, die Bearbeitung von Anfragen, die Darstellung externer Inhalte, die Analyse der Websitenutzung oder aufgrund gesetzlicher Pflichten erforderlich ist.
+                </p>
+
+                <h2>Verantwortlicher</h2>
+                <p>
+                    Privatschule GRAND<br>
+                    A. Bergen &amp; Partner GbR<br>
+                    Bertholdstr. 6<br>
+                    D-76530 Baden-Baden<br>
+                    Deutschland
+                </p>
+                <p>
+                    Telefon: <a href="tel:+4917680135357">+49 176 80135357</a><br>
+                    E-Mail: <a href="mailto:info@bergen-grand.com">info@bergen-grand.com</a>
+                </p>
+
+                <h2>Server-Logfiles</h2>
+                <p>
+                    Beim Aufruf dieser Website werden durch den Hostinganbieter technisch erforderliche Zugriffsdaten verarbeitet. Dazu können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Referrer-URL, Browsertyp, Betriebssystem und übertragene Datenmenge gehören.
+                </p>
+                <p>
+                    Die Verarbeitung erfolgt zur sicheren und stabilen Bereitstellung der Website, zur Fehleranalyse und zur Abwehr von Missbrauch. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
+                </p>
+
+                <h2>Kontaktaufnahme</h2>
+                <p>
+                    Wenn Sie uns per Telefon, E-Mail oder Kontaktformular kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Angaben zur Bearbeitung Ihrer Anfrage. Dazu können Name, Telefonnummer, E-Mail-Adresse, Inhalt der Nachricht und weitere freiwillig übermittelte Angaben gehören.
+                </p>
+                <p>
+                    Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit die Anfrage mit vorvertraglichen oder vertraglichen Maßnahmen zusammenhängt, und Art. 6 Abs. 1 lit. f DSGVO für unser berechtigtes Interesse an der Bearbeitung allgemeiner Anfragen.
+                </p>
+
+                <h2>Cookies und Einwilligungsverwaltung</h2>
+                <p>
+                    Diese Website verwendet technisch notwendige Cookies, um Ihre Datenschutz-Einstellungen zu speichern. Diese Cookies sind erforderlich, damit die Website Ihre Auswahl zu optionalen Diensten erkennt und nicht bei jedem Seitenaufruf erneut abfragt.
+                </p>
+                <p>
+                    Für nicht notwendige Dienste, insbesondere Google Analytics und Google Maps, wird eine Einwilligung eingeholt, bevor diese Dienste geladen oder entsprechende Daten verarbeitet werden. Rechtsgrundlage für einwilligungspflichtige Dienste ist Art. 6 Abs. 1 lit. a DSGVO. Die Speicherung und der Zugriff auf Informationen im Endgerät erfolgen, soweit erforderlich, auf Grundlage der gesetzlichen Vorgaben des TDDDG.
+                </p>
+                <p>
+                    Sie können Ihre Einwilligung jederzeit über die <a href="#cookie-einstellungen" data-cookie-open-settings>Cookie-Einstellungen</a> ändern oder widerrufen.
+                </p>
+
+                <h2>Google Analytics</h2>
+                <p>
+                    Diese Website kann Google Analytics verwenden, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
+                </p>
+                <p>
+                    Google Analytics hilft uns zu verstehen, wie die Website genutzt wird. Dabei können insbesondere Informationen über besuchte Seiten, Verweildauer, Geräte- und Browserdaten, ungefähre Standortdaten, Interaktionen auf der Website und gekürzte IP-Adressen verarbeitet werden.
+                </p>
+                <p>
+                    Google Analytics wird nur nach vorheriger Einwilligung geladen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO. Google kann Cookies oder vergleichbare Technologien einsetzen. Es kann nicht ausgeschlossen werden, dass Daten an Google LLC in den USA übermittelt werden. Google ist nach dem EU-US Data Privacy Framework zertifiziert.
+                </p>
+                <p>
+                    Die Einwilligung kann jederzeit über die Cookie-Einstellungen widerrufen werden. Weitere Informationen zur Datenverarbeitung durch Google finden Sie unter <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">policies.google.com/privacy</a>.
+                </p>
+
+                <h2>Google Maps</h2>
+                <p>
+                    Diese Website kann Google Maps zur Darstellung von Karten und zur besseren Auffindbarkeit unseres Standorts verwenden. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
+                </p>
+                <p>
+                    Beim Laden von Google Maps können personenbezogene Daten, insbesondere IP-Adresse, Geräteinformationen, Standortdaten und Nutzungsdaten, an Google übermittelt werden. Dabei kann auch eine Übermittlung an Google LLC in den USA erfolgen.
+                </p>
+                <p>
+                    Google Maps wird nur nach vorheriger Einwilligung geladen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO. Weitere Informationen zur Datenverarbeitung durch Google finden Sie unter <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">policies.google.com/privacy</a>.
+                </p>
+
+                <h2>Externe Dienste und Medien</h2>
+                <p>
+                    Wenn externe Inhalte oder Dienste eingebunden werden, können Anbieter dieser Dienste personenbezogene Daten verarbeiten. Dazu gehören je nach Dienst IP-Adresse, Browser- und Geräteinformationen, Nutzungsdaten und technische Verbindungsdaten.
+                </p>
+                <p>
+                    Externe Medien werden nur geladen, wenn Sie hierzu eine Einwilligung erteilt haben oder wenn eine Einbindung aus technischen oder rechtlichen Gründen zwingend erforderlich ist.
+                </p>
+
+                <h2>Weitergabe von Daten</h2>
+                <p>
+                    Eine Weitergabe personenbezogener Daten an Dritte erfolgt nur, wenn dies zur Bearbeitung Ihrer Anfrage erforderlich ist, eine gesetzliche Verpflichtung besteht, ein berechtigtes Interesse vorliegt oder Sie eingewilligt haben. Eine Weitergabe kann insbesondere an technische Dienstleister erfolgen, die am Betrieb der Website beteiligt sind.
+                </p>
+
+                <h2>Speicherdauer</h2>
+                <p>
+                    Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Anfragen werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind, sofern keine gesetzlichen Pflichten entgegenstehen.
+                </p>
+
+                <h2>Ihre Rechte</h2>
+                <p>Sie haben im Rahmen der gesetzlichen Vorgaben das Recht auf:</p>
+                <p>
+                    Auskunft über Ihre gespeicherten Daten, Berichtigung unrichtiger Daten, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen bestimmte Verarbeitungen.
+                </p>
+                <p>
+                    Wenn eine Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Außerdem haben Sie das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.
+                </p>
+
+                <h2>Zuständige Aufsichtsbehörde</h2>
+                <p>
+                    Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br>
+                    Lautenschlagerstraße 20<br>
+                    70173 Stuttgart<br>
+                    Deutschland
+                </p>
+
+                <h2>Änderung dieser Datenschutzerklärung</h2>
+                <p>
+                    Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich technische, rechtliche oder organisatorische Änderungen ergeben.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="footer-logo" href="{% url 'index' %}#top" aria-label="Zur Startseite">
+            <img src="{% static 'img/logo_small.png' %}" alt="" width="56" height="56">
+        </a>
+        <p>Privatschule GRAND</p>
+        <div class="footer-contact-line" aria-label="Kontaktdaten">
+            <span>Bertholdstr. 6, D-76530 Baden-Baden</span>
+            <a href="tel:+4917680135357">+49 176 80135357</a>
+            <a href="mailto:info@bergen-grand.com">info@bergen-grand.com</a>
+        </div>
+        <nav aria-label="Footer">
+            <a href="{% url 'index' %}#nachhilfe">Nachhilfe</a>
+            <a href="{% url 'index' %}#deutschkurse">Deutschkurse</a>
+            <a href="{% url 'index' %}#integration">Integration</a>
+            <a href="{% url 'index' %}#philosophie">Über uns</a>
+            <a href="{% url 'index' %}#kontakt">Kontakt</a>
+            <a href="{% url 'impressum' %}">Impressum</a>
+            <a href="{% url 'datenschutz' %}">Datenschutz</a>
+            <a href="#cookie-einstellungen" data-cookie-open-settings>Cookie-Einstellungen</a>
+        </nav>
+        <small>&copy; 2026 Privatschule GRAND Baden-Baden. Alle Rechte vorbehalten.</small>
+    </footer>
+
+    {% include "includes/cookie_consent.html" %}
+
+    <script src="{% static 'js/main.js' %}?v=20260513-6"></script>
+</body>
+</html>

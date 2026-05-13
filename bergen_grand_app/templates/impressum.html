@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Privatschule GRAND Baden-Baden</title>
+    <meta name="description" content="Impressum der Privatschule GRAND in Baden-Baden mit Anbieterkennzeichnung, Kontaktdaten und Verantwortlichen.">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0e2a47">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Privatschule GRAND">
+    <meta property="og:title" content="Impressum | Privatschule GRAND Baden-Baden">
+    <meta property="og:description" content="Anbieterkennzeichnung und Kontaktdaten der Privatschule GRAND in Baden-Baden.">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:image" content="{{ og_image_url }}">
+    <meta property="og:image:secure_url" content="{{ og_image_url }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Privatschule GRAND Baden-Baden">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Impressum | Privatschule GRAND Baden-Baden">
+    <meta name="twitter:description" content="Anbieterkennzeichnung und Kontaktdaten der Privatschule GRAND in Baden-Baden.">
+    <meta name="twitter:image" content="{{ og_image_url }}">
+    <link rel="icon" type="image/png" href="{% static 'img/logo_small.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/logo_small.png' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=20260513-11">
+</head>
+<body
+    data-cookie-consent-analytics="{% if cookie_consent_analytics %}1{% else %}0{% endif %}"
+    data-cookie-consent-external-media="{% if cookie_consent_external_media %}1{% else %}0{% endif %}"
+    data-cookie-has-consent="{% if cookie_has_consent %}1{% else %}0{% endif %}"
+    data-cookie-banner-closed="{% if cookie_banner_closed %}1{% else %}0{% endif %}"
+>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+    <header class="site-header" data-header>
+        <nav class="nav-shell" aria-label="Hauptnavigation">
+            <a class="brand" href="{% url 'index' %}#top" aria-label="Privatschule GRAND Baden-Baden">
+                <img src="{% static 'img/logo_small.png' %}" alt="" width="104" height="104">
+                <span>Privatschule GRAND</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="sr-only">Menü öffnen</span>
+            </button>
+
+            <div class="site-menu" id="site-menu" data-menu>
+                <a href="{% url 'index' %}#nachhilfe">Nachhilfe</a>
+                <a href="{% url 'index' %}#deutschkurse">Deutschkurse</a>
+                <a href="{% url 'index' %}#integration">Integration</a>
+                <a href="{% url 'index' %}#philosophie">Über uns</a>
+                <a href="{% url 'index' %}#kontakt">Kontakt</a>
+                <a class="nav-cta" href="{% url 'index' %}#kontakt">Anfrage stellen</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="legal-page" id="inhalt">
+        <section class="legal-page-shell">
+            <p class="section-kicker">Rechtliches</p>
+            <h1>Impressum</h1>
+            <div class="legal-content">
+                <p class="legal-muted">Angaben gemäß § 5 DDG</p>
+                <p>
+                    <strong>Privatschule GRAND</strong><br>
+                    A. Bergen &amp; Partner GbR<br>
+                    Bertholdstr. 6<br>
+                    D-76530 Baden-Baden<br>
+                    Deutschland
+                </p>
+                <h2>Kontakt</h2>
+                <p>
+                    Telefon: <a href="tel:+4917680135357">+49 176 80135357</a><br>
+                    E-Mail: <a href="mailto:info@bergen-grand.com">info@bergen-grand.com</a>
+                </p>
+                <h2>Gesellschafter</h2>
+                <p>
+                    Alexander Bergen - 50 %<br>
+                    Irina Bergen - 50 %
+                </p>
+                <h2>Vertreten durch</h2>
+                <p>Alexander Bergen und Irina Bergen</p>
+                <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+                <p>
+                    Alexander Bergen und Irina Bergen<br>
+                    Bertholdstr. 6<br>
+                    D-76530 Baden-Baden<br>
+                    Deutschland
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="footer-logo" href="{% url 'index' %}#top" aria-label="Zur Startseite">
+            <img src="{% static 'img/logo_small.png' %}" alt="" width="56" height="56">
+        </a>
+        <p>Privatschule GRAND</p>
+        <div class="footer-contact-line" aria-label="Kontaktdaten">
+            <span>Bertholdstr. 6, D-76530 Baden-Baden</span>
+            <a href="tel:+4917680135357">+49 176 80135357</a>
+            <a href="mailto:info@bergen-grand.com">info@bergen-grand.com</a>
+        </div>
+        <nav aria-label="Footer">
+            <a href="{% url 'index' %}#nachhilfe">Nachhilfe</a>
+            <a href="{% url 'index' %}#deutschkurse">Deutschkurse</a>
+            <a href="{% url 'index' %}#integration">Integration</a>
+            <a href="{% url 'index' %}#philosophie">Über uns</a>
+            <a href="{% url 'index' %}#kontakt">Kontakt</a>
+            <a href="{% url 'impressum' %}">Impressum</a>
+            <a href="{% url 'datenschutz' %}">Datenschutz</a>
+            <a href="#cookie-einstellungen" data-cookie-open-settings>Cookie-Einstellungen</a>
+        </nav>
+        <small>&copy; 2026 Privatschule GRAND Baden-Baden. Alle Rechte vorbehalten.</small>
+    </footer>
+
+    {% include "includes/cookie_consent.html" %}
+
+    <script src="{% static 'js/main.js' %}?v=20260513-6"></script>
+</body>
+</html>

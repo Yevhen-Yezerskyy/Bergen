@@ -56,6 +56,13 @@ services:
       DJANGO_INSTANCE: "bergen-grand-dev"
       PYTHONPATH: /app/bergen_grand_app
       PYTHONUNBUFFERED: "1"
+      EMAIL_HOST: "${GRAND_EMAIL_HOST:-smtp.ionos.de}"
+      EMAIL_PORT: "${GRAND_EMAIL_PORT:-587}"
+      EMAIL_USE_TLS: "${GRAND_EMAIL_USE_TLS:-1}"
+      EMAIL_HOST_USER: "${GRAND_EMAIL_HOST_USER:-}"
+      EMAIL_HOST_PASSWORD: "${GRAND_EMAIL_HOST_PASSWORD:-}"
+      DEFAULT_FROM_EMAIL: "${GRAND_DEFAULT_FROM_EMAIL:-info@bergen-grand.com}"
+      CONTACT_RECIPIENT_EMAIL: "${GRAND_CONTACT_RECIPIENT_EMAIL:-info@bergen-grand.com}"
     ports:
       - "127.0.0.1:18006:8000"
     volumes:
@@ -98,6 +105,13 @@ services:
       DEBUG: "0"
       DJANGO_INSTANCE: "bergen-grand-prod"
       PYTHONPATH: /app/bergen_grand_app
+      EMAIL_HOST: "${GRAND_EMAIL_HOST:-smtp.ionos.de}"
+      EMAIL_PORT: "${GRAND_EMAIL_PORT:-587}"
+      EMAIL_USE_TLS: "${GRAND_EMAIL_USE_TLS:-1}"
+      EMAIL_HOST_USER: "${GRAND_EMAIL_HOST_USER:-}"
+      EMAIL_HOST_PASSWORD: "${GRAND_EMAIL_HOST_PASSWORD:-}"
+      DEFAULT_FROM_EMAIL: "${GRAND_DEFAULT_FROM_EMAIL:-info@bergen-grand.com}"
+      CONTACT_RECIPIENT_EMAIL: "${GRAND_CONTACT_RECIPIENT_EMAIL:-info@bergen-grand.com}"
     ports:
       - "127.0.0.1:18007:8000"
     volumes:
