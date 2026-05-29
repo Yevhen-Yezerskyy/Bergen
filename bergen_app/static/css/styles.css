@@ -622,7 +622,15 @@ main {
 .contacts-company {
     margin: 0 0 34px;
 }
+.contacts-company-name,
+.contacts-company-address {
+  text-decoration: none;
+}
 
+.contacts-company-name:hover,
+.contacts-company-address:hover {
+  color: var(--text);
+}
 .contacts-company-name {
     font-family: "Lato", Arial, sans-serif;
     font-size: 26px;
