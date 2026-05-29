@@ -1602,3 +1602,179 @@ main {
         font-size: 34px;
     }
 }
+
+.seo-renovation-section {
+  padding: 78px 0;
+  background: #f4f1eb;
+  border-top: 1px solid rgba(205, 187, 168, 0.65);
+  border-bottom: 1px solid rgba(205, 187, 168, 0.65);
+}
+
+.seo-renovation {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.seo-renovation__head {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.seo-renovation__eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 1.3;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #9a8778;
+}
+
+.seo-renovation__head h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.15;
+  font-weight: 400;
+  color: #003273;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+}
+
+.seo-renovation__scroll {
+  max-height: 540px;
+  overflow-y: auto;
+  padding: 38px 44px;
+  background: #fff;
+  border: 1px solid rgba(205, 187, 168, 0.8);
+  box-shadow: 0 18px 48px rgba(0, 32, 78, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: #b9a18c #f1ece5;
+}
+
+.seo-renovation__scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.seo-renovation__scroll::-webkit-scrollbar-track {
+  background: #f1ece5;
+}
+
+.seo-renovation__scroll::-webkit-scrollbar-thumb {
+  background: #b9a18c;
+  border-radius: 999px;
+}
+
+.seo-renovation__content {
+  max-width: 920px;
+}
+
+.seo-renovation__content h3 {
+  margin: 34px 0 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.25;
+  font-weight: 400;
+  color: #003273;
+}
+
+.seo-renovation__content h3:first-child {
+  margin-top: 0;
+}
+
+.seo-renovation__content p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #81766d;
+}
+
+.seo-renovation__faq {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.seo-renovation__faq p {
+  margin: 0;
+  padding: 18px 20px;
+  background: #f7f3ee;
+  border-left: 3px solid #003273;
+}
+
+.seo-renovation__faq strong {
+  color: #003273;
+  font-weight: 500;
+}
+
+.seo-renovation__cta {
+  margin-top: 38px;
+  padding: 30px;
+  background: #f4f1eb;
+  border: 1px solid rgba(205, 187, 168, 0.85);
+}
+
+.seo-renovation__cta h3 {
+  margin-top: 0;
+}
+
+.seo-renovation__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 14px 28px;
+  border: 1px solid #003273;
+  background: #003273;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.seo-renovation__button:hover {
+  background: transparent;
+  color: #003273;
+}
+
+@media (max-width: 768px) {
+  .seo-renovation-section {
+    padding: 56px 0;
+  }
+
+  .seo-renovation {
+    padding: 0 18px;
+  }
+
+  .seo-renovation__scroll {
+    max-height: 500px;
+    padding: 28px 22px;
+  }
+
+  .seo-renovation__content p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .seo-renovation__cta {
+    padding: 24px 20px;
+  }
+
+  .seo-renovation__button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .seo-renovation__scroll {
+    max-height: 460px;
+    padding: 24px 18px;
+  }
+
+  .seo-renovation__eyebrow {
+    letter-spacing: 0.22em;
+  }
+}
