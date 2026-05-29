@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow:
 
-Sitemap: {{ site_url }}/sitemap.xml
+Sitemap: https://bergen-immobilienservice.com/sitemap.xml
