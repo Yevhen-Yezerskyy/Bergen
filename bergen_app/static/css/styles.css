@@ -627,10 +627,17 @@ main {
   text-decoration: none;
 }
 
+.contacts-link{
+    color: #8f877a;
+    text-decoration: none;
+}
+
 .contacts-company-name:hover,
-.contacts-company-address:hover {
+.contacts-company-address:hover,
+ .contacts-link:hover{
   color: var(--text);
 }
+
 .contacts-company-name {
     font-family: "Lato", Arial, sans-serif;
     font-size: 26px;
