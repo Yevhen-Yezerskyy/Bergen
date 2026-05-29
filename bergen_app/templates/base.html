@@ -1,32 +1,49 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice in Baden-Baden{% endblock %}</title>
-    <meta name="keywords" content="{% block keywords %}Bergen Immobilienservice GmbH, Bau, Sanierung, Immobilienverwaltung, Gebäudeservice, Renovierung, Modernisierung, Instandhaltung, Hausmeisterservice, Wohnimmobilien, Gewerbeimmobilien, Mehrfamilienhaus, Bauunternehmen, Baden-Baden{% endblock %}">
-    <meta name="description" content="{% block description %}Bergen Immobilienservice GmbH in Baden-Baden: Bau, Sanierung, Immobilienverwaltung und Gebäudeservice für Wohn- und Gewerbeimmobilien. Persönlich, zuverlässig und praxisnah betreut.{% endblock %}">
-    <meta name="robots" content="{% block meta_robots %}index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1{% endblock %}">
-    <link rel="canonical" href="{% block canonical_url %}https://bergen-immobilienservice.com{{ request.path }}{% endblock %}">
-    <link rel="alternate" hreflang="de-DE" href="{% block hreflang_de %}https://bergen-immobilienservice.com{{ request.path }}{% endblock %}">
+    <title>{% block title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice in
+        Baden-Baden{% endblock %}</title>
+    <meta name="keywords"
+        content="{% block keywords %}Bergen Immobilienservice GmbH, Bau, Sanierung, Immobilienverwaltung, Gebäudeservice, Renovierung, Modernisierung, Instandhaltung, Hausmeisterservice, Wohnimmobilien, Gewerbeimmobilien, Mehrfamilienhaus, Bauunternehmen, Baden-Baden{% endblock %}">
+    <meta name="description"
+        content="{% block description %}Bergen Immobilienservice GmbH in Baden-Baden: Bau, Sanierung, Immobilienverwaltung und Gebäudeservice für Wohn- und Gewerbeimmobilien. Persönlich, zuverlässig und praxisnah betreut.{% endblock %}">
+    <meta name="robots"
+        content="{% block meta_robots %}index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1{% endblock %}">
+    <link rel="canonical"
+        href="{% block canonical_url %}https://bergen-immobilienservice.com{{ request.path }}{% endblock %}">
+    <link rel="alternate" hreflang="de-DE"
+        href="{% block hreflang_de %}https://bergen-immobilienservice.com{{ request.path }}{% endblock %}">
     <link rel="alternate" hreflang="x-default" href="https://bergen-immobilienservice.com/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_DE">
     <meta property="og:site_name" content="Bergen Immobilienservice GmbH">
-    <meta property="og:url" content="{% block og_url %}https://bergen-immobilienservice.com{{ request.path }}{% endblock %}">
-    <meta property="og:title" content="{% block og_title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice in Baden-Baden{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Bau, Sanierung, Immobilienverwaltung und Gebäudeservice in Baden-Baden für Wohn- und Gewerbeimmobilien. Zuverlässig, koordiniert und persönlich betreut.{% endblock %}">
-    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'img/opg.jpg' %}{% endblock %}">
-    <meta property="og:image:alt" content="{% block og_image_alt %}Bergen Immobilienservice GmbH in Baden-Baden{% endblock %}">
+    <meta property="og:url"
+        content="{% block og_url %}https://bergen-immobilienservice.com{{ request.path }}{% endblock %}">
+    <meta property="og:title"
+        content="{% block og_title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice in Baden-Baden{% endblock %}">
+    <meta property="og:description"
+        content="{% block og_description %}Bau, Sanierung, Immobilienverwaltung und Gebäudeservice in Baden-Baden für Wohn- und Gewerbeimmobilien. Zuverlässig, koordiniert und persönlich betreut.{% endblock %}">
+    <meta property="og:image"
+        content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'img/opg.jpg' %}{% endblock %}">
+    <meta property="og:image:alt"
+        content="{% block og_image_alt %}Bergen Immobilienservice GmbH in Baden-Baden{% endblock %}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice{% endblock %}">
-    <meta name="twitter:description" content="{% block twitter_description %}Bergen Immobilienservice GmbH in Baden-Baden: Bau, Sanierung, Immobilienverwaltung und Gebäudeservice für Wohn- und Gewerbeimmobilien.{% endblock %}">
-    <meta name="twitter:image" content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'img/opg.jpg' %}{% endblock %}">
-    <meta name="twitter:image:alt" content="{% block twitter_image_alt %}Bergen Immobilienservice GmbH in Baden-Baden{% endblock %}">
+    <meta name="twitter:title"
+        content="{% block twitter_title %}Bergen Immobilienservice GmbH | Bau, Sanierung, Immobilienverwaltung &amp; Gebäudeservice{% endblock %}">
+    <meta name="twitter:description"
+        content="{% block twitter_description %}Bergen Immobilienservice GmbH in Baden-Baden: Bau, Sanierung, Immobilienverwaltung und Gebäudeservice für Wohn- und Gewerbeimmobilien.{% endblock %}">
+    <meta name="twitter:image"
+        content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'img/opg.jpg' %}{% endblock %}">
+    <meta name="twitter:image:alt"
+        content="{% block twitter_image_alt %}Bergen Immobilienservice GmbH in Baden-Baden{% endblock %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="{% static 'img/icon.svg' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=20260430-14">
     {% block json_ld %}
@@ -51,24 +68,26 @@
     </script>
     {% endblock %}
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PXKW5BRR');</script>
-<!-- End Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PXKW5BRR');</script>
+    <!-- End Google Tag Manager -->
 
 </head>
-<body
-    data-cookie-consent-analytics="{% if cookie_consent_analytics %}1{% else %}0{% endif %}"
+
+<body data-cookie-consent-analytics="{% if cookie_consent_analytics %}1{% else %}0{% endif %}"
     data-cookie-consent-external-media="{% if cookie_consent_external_media %}1{% else %}0{% endif %}"
     data-cookie-has-consent="{% if cookie_has_consent %}1{% else %}0{% endif %}"
-    data-cookie-banner-closed="{% if cookie_banner_closed %}1{% else %}0{% endif %}"
->
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXKW5BRR"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    data-cookie-banner-closed="{% if cookie_banner_closed %}1{% else %}0{% endif %}">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXKW5BRR" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <header class="site-header">
         <div class="header-top">
@@ -100,7 +119,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container project-cta-content">
             <p class="project-cta-topline">Präzision in jedem Gewerk</p>
             <h2>Bereit für Ihr nächstes Projekt?</h2>
-            <p class="project-cta-description">Lassen Sie uns gemeinsam den Grundstein für den Werterhalt Ihrer Immobilie legen.<br>Persönlich, kompetent und direkt vor Ort.</p>
+            <p class="project-cta-description">Lassen Sie uns gemeinsam den Grundstein für den Werterhalt Ihrer
+                Immobilie legen.<br>Persönlich, kompetent und direkt vor Ort.</p>
         </div>
     </section>
 
@@ -115,15 +135,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="container">
                 <div class="contacts-grid">
                     <div class="contacts-left">
-                    <p class="contacts-company">
-  <a class="contacts-company-name" href="https://www.google.com/maps?cid=6505482488724508103" target="_blank" rel="noopener">
-    Bergen Immobilienservice GmbH
-  </a>
-  <br>
-  <a class="contacts-company-address" href="https://www.google.com/maps?cid=6505482488724508103" target="_blank" rel="noopener">
-    Bertholdstr. 6, D-76530 Baden-Baden
-  </a>
-</p>
+                        <p class="contacts-company">
+                            <a class="contacts-company-name" href="https://www.google.com/maps?cid=6505482488724508103"
+                                target="_blank" rel="noopener">
+                                Bergen Immobilienservice GmbH
+                            </a>
+                            <br>
+                            <a class="contacts-company-address"
+                                href="https://www.google.com/maps?cid=6505482488724508103" target="_blank"
+                                rel="noopener">
+                                Bertholdstr. 6, D-76530 Baden-Baden
+                            </a>
+                        </p>
                         <div class="contacts-table" aria-label="Kontaktdaten">
                             <div class="contacts-row">
                                 <div class="contacts-key">Tel</div>
@@ -141,106 +164,181 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="contacts-row">
                                 <div class="contacts-key">E-Mail</div>
                                 <div class="contacts-val">
-                                    <a href="mailto:service@bergen-immobilienservice.com">service@bergen-immobilienservice.com</a><br>
+                                    <a
+                                        href="mailto:service@bergen-immobilienservice.com">service@bergen-immobilienservice.com</a><br>
                                     <a href="mailto:grand878@icloud.com">grand878@icloud.com</a><br>
                                     <a href="mailto:a.bergen@mail.de">a.bergen@mail.de</a>
                                 </div>
                             </div>
                             <div class="contacts-row">
-  <div class="contacts-label">Öffnungszeiten</div>
-  <div class="contacts-value">
-    Montag–Samstag<br>
-    08:00–20:00
-  </div>
-</div>
+                                <div class="contacts-label">Öffnungszeiten</div>
+                                <div class="contacts-value">
+                                    Montag–Samstag<br>
+                                    08:00–20:00
+                                </div>
+                            </div>
 
-<div class="contacts-row">
-  <div class="contacts-label">Facebook</div>
-  <div class="contacts-value">
-    <a
-      class="contacts-link"
-      href="https://www.facebook.com/p/Bergen-Immobilienservice-100063771295210/"
-      target="_blank"
-      rel="noopener"
-    >
-      Bergen Immobilienservice
-    </a>
-  </div>
-</div>
+                            <div class="contacts-row">
+                                <div class="contacts-label">Facebook</div>
+                                <div class="contacts-value">
+                                    <a class="contacts-link"
+                                        href="https://www.facebook.com/p/Bergen-Immobilienservice-100063771295210/"
+                                        target="_blank" rel="noopener">
+                                        Bergen Immobilienservice
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="contacts-map">
-                        <div class="map-consent" data-map-container data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7439.733517206289!2d8.240424135779573!3d48.75624560323014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47971f451dfc5e79%3A0x5a481ddb20f2cdc7!2sBergen-Immobilienservice%20-%20Renovierung%20%26%20Sanierung%20in%20Baden-Baden!5e0!3m2!1sde!2sde!4v1780070492593!5m2!1sde!2sde"></div>
+                        <div class="map-consent" data-map-container
+                            data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7439.733517206289!2d8.240424135779573!3d48.75624560323014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47971f451dfc5e79%3A0x5a481ddb20f2cdc7!2sBergen-Immobilienservice%20-%20Renovierung%20%26%20Sanierung%20in%20Baden-Baden!5e0!3m2!1sde!2sde!4v1780070492593!5m2!1sde!2sde">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="contact-form-card">
+                    <h3 class="contact-form-card__title">Kostenloses Angebot anfordern</h3>
+                    <p class="contact-form-card__text">
+                        Schreiben Sie uns kurz Ihr Anliegen. Wir melden uns für ein erstes Gespräch.
+                    </p>
+
+                    <form class="contact-form" method="post" action="{% url 'contact_form_submit' %}">
+                        {% csrf_token %}
+
+                        <div class="contact-form__field">
+                            <label for="contact-name">Name</label>
+                            <input id="contact-name" type="text" name="name" placeholder="Ihr Name" required>
+                        </div>
+
+                        <div class="contact-form__field">
+                            <label for="contact-phone">Telefon</label>
+                            <input id="contact-phone" type="tel" name="phone" placeholder="+49 ..." required>
+                        </div>
+
+                        <div class="contact-form__field">
+                            <label for="contact-message">Nachricht</label>
+                            <textarea id="contact-message" name="message" rows="4"
+                                placeholder="Worum geht es?"></textarea>
+                        </div>
+
+                        <button class="contact-form__button" type="submit">
+                            Anfrage senden
+                        </button>
+
+                        <p class="contact-form__status" aria-live="polite"></p>
+                    </form>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    {% if request.resolver_match.url_name == 'index' %}
+    <section class="seo-renovation-section" id="renovierung-baden-baden">
+        <div class="container">
+            <div class="seo-renovation">
+                <div class="seo-renovation__head">
+                    <span class="seo-renovation__eyebrow">Renovierung und Sanierung</span>
+                    <h2>Renovierung in Baden-Baden: Komplettsanierung aus einer Hand</h2>
+                </div>
+
+                <div class="seo-renovation__scroll">
+                    <div class="seo-renovation__content">
+                        <p>
+                            Sie planen eine Renovierung und suchen ein Unternehmen, das den gesamten Prozess übernimmt,
+                            ohne dass Sie fünf verschiedene Gewerke koordinieren müssen? Bergen-Immobilienservice
+                            realisiert seit über 10 Jahren Sanierungsprojekte in Baden-Baden und der Region: 10 Häuser
+                            neu gebaut, 100 Komplettsanierungen abgeschlossen, mehr als 10.000 Einzelleistungen
+                            erbracht. Alle Arbeiten führt ein festes Team durch.
+                        </p>
+
+                        <h3>Was wir in Baden-Baden renovieren: Wohnungen, Häuser, Gewerbe</h3>
+                        <p>
+                            Sanierung in Baden-Baden umfasst bei uns drei Objekttypen. Privatwohnungen und
+                            Einfamilienhäuser: Grundrissveränderungen, neue Bodenbeläge, Malerarbeiten, Elektro- und
+                            Sanitärinstallationen. Gewerbeimmobilien: Restaurants, Bildungseinrichtungen, Büros.
+                            Investorenobjekte: Ankauf, Sanierung, Weitervermietung oder Weiterverkauf. Rund 70 Prozent
+                            unserer Auftraggeber sind Investoren, die eine fertige, vermietbare Immobilie übergeben
+                            bekommen möchten.
+                        </p>
+
+                        <h3>Unser Ablauf: vom Angebot bis zum Projektstart</h3>
+                        <p>
+                            Renovierungen in Baden-Baden planen wir nach einem festen Schema, das für beide Seiten
+                            Sicherheit gibt. Sie reichen eine Anfrage ein, das geht per Website-Formular oder E-Mail.
+                            Die Anfrage landet automatisch in unserem CRM. Wir melden uns, vereinbaren ein
+                            Online-Erstgespräch und schicken anschließend einen Vorarbeiter zum Objekt. Innerhalb von 2
+                            Werktagen erhalten Sie ein detailliertes Angebot. Nach Vertragsunterzeichnung beginnen die
+                            Arbeiten innerhalb von 14 Tagen.
+                        </p>
+
+                        <h3>Wohnung renovieren in Baden-Baden: was im Preis enthalten ist</h3>
+                        <p>
+                            Wohnung renovieren in Baden-Baden heißt bei Bergen-Immobilienservice: ein Ansprechpartner,
+                            ein Team, ein Vertrag. Kein Abstimmen zwischen Fliesenleger, Elektriker und Maler, die sich
+                            gegenseitig im Weg stehen. Alle Gewerke arbeiten in abgestimmter Reihenfolge. Für Projekte
+                            ab 20.000 Euro erstellen wir eine kostenfreie 3D-Visualisierung, damit Sie das Ergebnis vor
+                            Baubeginn sehen. Neukunden erhalten 3 Prozent Rabatt auf das Gesamtvolumen.
+                        </p>
+
+                        <h3>Badsanierung und weitere Gewerke: alles aus einer Hand</h3>
+                        <p>
+                            Badsanierung in Baden-Baden gehört zu unseren gefragtesten Einzelleistungen: neue Fliesen,
+                            barrierefreier Umbau, Leitungserneuerung, Einbau von Walk-in-Duschen oder Badewannen. Dazu
+                            kommen Küchenrenovierungen, Bodenverlegung, Trockenbau, Malerarbeiten und Außenfassaden.
+                            Weil das eigene Team alle Gewerke abdeckt, entfällt die typische Verzögerung durch wartende
+                            Subunternehmer. Das spart Zeit und hält den Zeitplan stabil.
+                        </p>
+
+                        <h3>KfW-Förderung: wie wir Sie bei der Antragstellung unterstützen</h3>
+                        <p>
+                            Wer eine Komplettsanierung in Baden-Baden plant, kann staatliche Zuschüsse und zinsgünstige
+                            Darlehen über das KfW-Programm beantragen: unter anderem für Dämmung, Fensteraustausch und
+                            Heiztechnik. Bergen-Immobilienservice kennt die Anforderungen und begleitet Sie durch den
+                            Prozess. Wir kalkulieren die förderfähigen Maßnahmen, dokumentieren die Arbeiten
+                            entsprechend und koordinieren die notwendigen Nachweise. So nutzen Sie das verfügbare Budget
+                            optimal aus.
+                        </p>
+
+                        <h3>Häufige Fragen zur Renovierung</h3>
+                        <div class="seo-renovation__faq">
+                            <p><strong>Wie schnell kann der Umbau beginnen?</strong><br>Nach Vertragsunterzeichnung
+                                starten wir innerhalb von 14 Tagen.</p>
+                            <p><strong>Muss ich selbst auf der Baustelle präsent sein?</strong><br>Nein. Bei
+                                Komplettsanierungen übergeben viele Auftraggeber den Schlüssel und erhalten die fertige
+                                Immobilie zurück. Das Team arbeitet eigenständig und hält Sie über den Fortschritt auf
+                                dem Laufenden.</p>
+                            <p><strong>Gilt die KfW-Förderung auch für Bestandsgebäude?</strong><br>Ja, in der Regel für
+                                Gebäude, die älter als 5 Jahre sind. Welche Maßnahmen förderfähig sind, klären wir im
+                                Erstgespräch.</p>
+                            <p><strong>Gibt es ein schriftliches Angebot?</strong><br>Ja, innerhalb von 2 Werktagen nach
+                                der Objektbegehung.</p>
+                        </div>
+
+                        <h3>Baden-Baden und Umgebung: unser Arbeitsgebiet</h3>
+                        <p>
+                            Bergen-Immobilienservice hat seinen Sitz im Zentrum von Baden-Baden, in der Bertholdstraße
+                            6. Wir nehmen Objekte aus dem gesamten Stadtgebiet an: Innenstadt, Lichtental, Oos,
+                            Weststadt, Sandweier, Varnhalt und Neuweier. Die Besichtigung durch den Vorarbeiter ist Teil
+                            des Standardablaufs und wird nicht gesondert berechnet. Neben der Stadt selbst arbeiten wir
+                            in den umliegenden Gemeinden: Rastatt, Bühl, Gernsbach und den Ortschaften des Landkreises
+                            Rastatt. Liegt Ihr Objekt im Umkreis von etwa 30 km um Baden-Baden, sprechen Sie uns an.
+                        </p>
+
+                        <div class="seo-renovation__cta">
+                            <h3>Kostenloses Angebot anfordern</h3>
+                            <p>
+                                Schreiben Sie uns über das Kontaktformular oder per E-Mail. Bergen-Immobilienservice
+                                meldet sich für ein erstes Gespräch, der Vorarbeiter kommt zum Objekt und Sie erhalten
+                                Ihr Angebot in 2 Tagen.
+                            </p>
+                            <a href="#kontakt" class="seo-renovation__button">Kontakt aufnehmen</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="seo-renovation-section" id="renovierung-baden-baden">
-  <div class="container">
-    <div class="seo-renovation">
-      <div class="seo-renovation__head">
-        <span class="seo-renovation__eyebrow">Renovierung und Sanierung</span>
-        <h2>Renovierung in Baden-Baden: Komplettsanierung aus einer Hand</h2>
-      </div>
-
-      <div class="seo-renovation__scroll">
-        <div class="seo-renovation__content">
-          <p>
-            Sie planen eine Renovierung und suchen ein Unternehmen, das den gesamten Prozess übernimmt, ohne dass Sie fünf verschiedene Gewerke koordinieren müssen? Bergen-Immobilienservice realisiert seit über 10 Jahren Sanierungsprojekte in Baden-Baden und der Region: 10 Häuser neu gebaut, 100 Komplettsanierungen abgeschlossen, mehr als 10.000 Einzelleistungen erbracht. Alle Arbeiten führt ein festes Team durch.
-          </p>
-
-          <h3>Was wir in Baden-Baden renovieren: Wohnungen, Häuser, Gewerbe</h3>
-          <p>
-            Sanierung in Baden-Baden umfasst bei uns drei Objekttypen. Privatwohnungen und Einfamilienhäuser: Grundrissveränderungen, neue Bodenbeläge, Malerarbeiten, Elektro- und Sanitärinstallationen. Gewerbeimmobilien: Restaurants, Bildungseinrichtungen, Büros. Investorenobjekte: Ankauf, Sanierung, Weitervermietung oder Weiterverkauf. Rund 70 Prozent unserer Auftraggeber sind Investoren, die eine fertige, vermietbare Immobilie übergeben bekommen möchten.
-          </p>
-
-          <h3>Unser Ablauf: vom Angebot bis zum Projektstart</h3>
-          <p>
-            Renovierungen in Baden-Baden planen wir nach einem festen Schema, das für beide Seiten Sicherheit gibt. Sie reichen eine Anfrage ein, das geht per Website-Formular oder E-Mail. Die Anfrage landet automatisch in unserem CRM. Wir melden uns, vereinbaren ein Online-Erstgespräch und schicken anschließend einen Vorarbeiter zum Objekt. Innerhalb von 2 Werktagen erhalten Sie ein detailliertes Angebot. Nach Vertragsunterzeichnung beginnen die Arbeiten innerhalb von 14 Tagen.
-          </p>
-
-          <h3>Wohnung renovieren in Baden-Baden: was im Preis enthalten ist</h3>
-          <p>
-            Wohnung renovieren in Baden-Baden heißt bei Bergen-Immobilienservice: ein Ansprechpartner, ein Team, ein Vertrag. Kein Abstimmen zwischen Fliesenleger, Elektriker und Maler, die sich gegenseitig im Weg stehen. Alle Gewerke arbeiten in abgestimmter Reihenfolge. Für Projekte ab 20.000 Euro erstellen wir eine kostenfreie 3D-Visualisierung, damit Sie das Ergebnis vor Baubeginn sehen. Neukunden erhalten 3 Prozent Rabatt auf das Gesamtvolumen.
-          </p>
-
-          <h3>Badsanierung und weitere Gewerke: alles aus einer Hand</h3>
-          <p>
-            Badsanierung in Baden-Baden gehört zu unseren gefragtesten Einzelleistungen: neue Fliesen, barrierefreier Umbau, Leitungserneuerung, Einbau von Walk-in-Duschen oder Badewannen. Dazu kommen Küchenrenovierungen, Bodenverlegung, Trockenbau, Malerarbeiten und Außenfassaden. Weil das eigene Team alle Gewerke abdeckt, entfällt die typische Verzögerung durch wartende Subunternehmer. Das spart Zeit und hält den Zeitplan stabil.
-          </p>
-
-          <h3>KfW-Förderung: wie wir Sie bei der Antragstellung unterstützen</h3>
-          <p>
-            Wer eine Komplettsanierung in Baden-Baden plant, kann staatliche Zuschüsse und zinsgünstige Darlehen über das KfW-Programm beantragen: unter anderem für Dämmung, Fensteraustausch und Heiztechnik. Bergen-Immobilienservice kennt die Anforderungen und begleitet Sie durch den Prozess. Wir kalkulieren die förderfähigen Maßnahmen, dokumentieren die Arbeiten entsprechend und koordinieren die notwendigen Nachweise. So nutzen Sie das verfügbare Budget optimal aus.
-          </p>
-
-          <h3>Häufige Fragen zur Renovierung</h3>
-          <div class="seo-renovation__faq">
-            <p><strong>Wie schnell kann der Umbau beginnen?</strong><br>Nach Vertragsunterzeichnung starten wir innerhalb von 14 Tagen.</p>
-            <p><strong>Muss ich selbst auf der Baustelle präsent sein?</strong><br>Nein. Bei Komplettsanierungen übergeben viele Auftraggeber den Schlüssel und erhalten die fertige Immobilie zurück. Das Team arbeitet eigenständig und hält Sie über den Fortschritt auf dem Laufenden.</p>
-            <p><strong>Gilt die KfW-Förderung auch für Bestandsgebäude?</strong><br>Ja, in der Regel für Gebäude, die älter als 5 Jahre sind. Welche Maßnahmen förderfähig sind, klären wir im Erstgespräch.</p>
-            <p><strong>Gibt es ein schriftliches Angebot?</strong><br>Ja, innerhalb von 2 Werktagen nach der Objektbegehung.</p>
-          </div>
-
-          <h3>Baden-Baden und Umgebung: unser Arbeitsgebiet</h3>
-          <p>
-            Bergen-Immobilienservice hat seinen Sitz im Zentrum von Baden-Baden, in der Bertholdstraße 6. Wir nehmen Objekte aus dem gesamten Stadtgebiet an: Innenstadt, Lichtental, Oos, Weststadt, Sandweier, Varnhalt und Neuweier. Die Besichtigung durch den Vorarbeiter ist Teil des Standardablaufs und wird nicht gesondert berechnet. Neben der Stadt selbst arbeiten wir in den umliegenden Gemeinden: Rastatt, Bühl, Gernsbach und den Ortschaften des Landkreises Rastatt. Liegt Ihr Objekt im Umkreis von etwa 30 km um Baden-Baden, sprechen Sie uns an.
-          </p>
-
-          <div class="seo-renovation__cta">
-            <h3>Kostenloses Angebot anfordern</h3>
-            <p>
-              Schreiben Sie uns über das Kontaktformular oder per E-Mail. Bergen-Immobilienservice meldet sich für ein erstes Gespräch, der Vorarbeiter kommt zum Objekt und Sie erhalten Ihr Angebot in 2 Tagen.
-            </p>
-            <a href="#kontakt" class="seo-renovation__button">Kontakt aufnehmen</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    {% endif %}
 
     <footer class="site-footer">
         <div class="container footer-brand-wrap">
@@ -255,8 +353,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <nav class="footer-nav" aria-label="Footer Services">
                 <a href="{% url 'leistungsbereiche' %}#bau" data-nav-target="leistungsbereiche">BAU</a>
                 <a href="{% url 'leistungsbereiche' %}#sanierung" data-nav-target="leistungsbereiche">SANIERUNG</a>
-                <a href="{% url 'leistungsbereiche' %}#immobilienverwaltung" data-nav-target="leistungsbereiche">IMMOBILIENVERWALTUNG</a>
-                <a href="{% url 'leistungsbereiche' %}#gebaeudeservice" data-nav-target="leistungsbereiche">GEBAUDESERVICE</a>
+                <a href="{% url 'leistungsbereiche' %}#immobilienverwaltung"
+                    data-nav-target="leistungsbereiche">IMMOBILIENVERWALTUNG</a>
+                <a href="{% url 'leistungsbereiche' %}#gebaeudeservice"
+                    data-nav-target="leistungsbereiche">GEBAUDESERVICE</a>
             </nav>
             <nav class="footer-nav" aria-label="Footer Main">
                 <a href="{% url 'index' %}" data-nav-target="home">HOME</a>
@@ -281,12 +381,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="cookie-consent-inner">
             <div class="cookie-consent-head">
                 <p class="cookie-consent-title">Datenschutz-Einstellungen</p>
-                <button type="button" class="cookie-toggle-button" data-cookie-toggle-settings aria-expanded="false">Einstellungen</button>
+                <button type="button" class="cookie-toggle-button" data-cookie-toggle-settings
+                    aria-expanded="false">Einstellungen</button>
             </div>
-            <p class="cookie-consent-text">Wir verwenden notwendige Cookies sowie optionale Dienste für Statistik und externe Medien. Sie können Ihre Auswahl jederzeit ändern.</p>
+            <p class="cookie-consent-text">Wir verwenden notwendige Cookies sowie optionale Dienste für Statistik und
+                externe Medien. Sie können Ihre Auswahl jederzeit ändern.</p>
             <div class="cookie-consent-actions">
-                <button type="button" class="cookie-btn cookie-btn-primary" data-cookie-accept-all>Alle akzeptieren</button>
-                <button type="button" class="cookie-btn cookie-btn-neutral" data-cookie-accept-necessary>Nur notwendige</button>
+                <button type="button" class="cookie-btn cookie-btn-primary" data-cookie-accept-all>Alle
+                    akzeptieren</button>
+                <button type="button" class="cookie-btn cookie-btn-neutral" data-cookie-accept-necessary>Nur
+                    notwendige</button>
                 <button type="button" class="cookie-btn cookie-btn-ghost" data-cookie-close-banner>Schließen</button>
             </div>
 
@@ -298,7 +402,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <label class="cookie-option">
                     <input type="checkbox" data-cookie-setting="analytics">
-                    <span><strong>Statistik</strong><br>Hilft uns, die Website-Nutzung zu verstehen und zu verbessern.</span>
+                    <span><strong>Statistik</strong><br>Hilft uns, die Website-Nutzung zu verstehen und zu
+                        verbessern.</span>
                 </label>
 
                 <label class="cookie-option">
@@ -307,9 +412,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </label>
 
                 <div class="cookie-consent-actions cookie-consent-actions-secondary">
-                    <button type="button" class="cookie-btn cookie-btn-primary" data-cookie-save-selection>Auswahl speichern</button>
-                    <button type="button" class="cookie-btn cookie-btn-neutral" data-cookie-accept-necessary>Nur notwendige</button>
-                    <button type="button" class="cookie-btn cookie-btn-ghost" data-cookie-accept-all>Alle akzeptieren</button>
+                    <button type="button" class="cookie-btn cookie-btn-primary" data-cookie-save-selection>Auswahl
+                        speichern</button>
+                    <button type="button" class="cookie-btn cookie-btn-neutral" data-cookie-accept-necessary>Nur
+                        notwendige</button>
+                    <button type="button" class="cookie-btn cookie-btn-ghost" data-cookie-accept-all>Alle
+                        akzeptieren</button>
                 </div>
             </div>
         </div>
@@ -318,12 +426,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="{% static 'js/main.js' %}?v=20260430-14"></script>
     {% block scripts %}{% endblock %}
     <a class="floating-phone" href="tel:+4917680135357" aria-label="Bergen Immobilienservice telefonisch kontaktieren">
-  <span class="floating-phone__icon" aria-hidden="true">
-    <svg viewBox="0 0 24 24">
-      <path d="M6.62 10.79c1.44 2.83 3.76 5.13 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z"/>
-    </svg>
-  </span>
-  
-</a>
+        <span class="floating-phone__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.13 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z" />
+            </svg>
+        </span>
+
+    </a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector(".contact-form");
+
+            if (!form) {
+                return;
+            }
+
+            const status = form.querySelector(".contact-form__status");
+            const button = form.querySelector(".contact-form__button");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                status.textContent = "";
+                status.classList.remove("is-success", "is-error");
+                button.disabled = true;
+                button.textContent = "Wird gesendet...";
+
+                const csrfInput = form.querySelector('[name="csrfmiddlewaretoken"]');
+                const csrfToken = csrfInput ? csrfInput.value : "";
+
+                fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(form),
+                    credentials: "same-origin",
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-CSRFToken": csrfToken
+                    }
+                })
+                    .then(async function (response) {
+                        const contentType = response.headers.get("content-type") || "";
+                        const data = contentType.includes("application/json")
+                            ? await response.json()
+                            : {
+                                message: "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es später erneut oder rufen Sie uns direkt an."
+                            };
+
+                        if (!response.ok) {
+                            throw data;
+                        }
+
+                        return data;
+                    })
+                    .then(function (data) {
+                        status.textContent = data.message || "Vielen Dank. Ihre Anfrage wurde gesendet.";
+                        status.classList.add("is-success");
+                        form.reset();
+                    })
+                    .catch(function (error) {
+                        status.textContent = error.message || "Die Anfrage konnte nicht gesendet werden. Bitte rufen Sie uns direkt an.";
+                        status.classList.add("is-error");
+                    })
+                    .finally(function () {
+                        button.disabled = false;
+                        button.textContent = "Anfrage senden";
+                    });
+            });
+        });
+    </script>
 </body>
+
 </html>

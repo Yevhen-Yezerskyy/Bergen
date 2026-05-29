@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import (
+    contact_form_submit,
     datenschutz,
     erfahrung,
     impressum,
@@ -35,4 +36,5 @@ urlpatterns = [
     path('robots.txt', robots_txt, name='robots_txt'),
     path('sitemap.xml', sitemap_xml, name='sitemap_xml'),
     path('admin/', admin.site.urls),
+    path('kontakt-anfrage/', contact_form_submit, name='contact_form_submit'),
 ]

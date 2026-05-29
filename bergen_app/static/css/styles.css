@@ -1938,3 +1938,129 @@ main {
     width: 100%;
   }
 }
+
+/* Form */
+.contact-form-card {
+    max-width: 500px;
+    margin: auto;
+  margin-top: 36px;
+  padding: 30px;
+  border: 1px solid rgba(205, 187, 168, 0.7);
+  background: #f4f1eb;
+}
+
+.contact-form-card__title {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 400;
+  color: #003273;
+}
+
+.contact-form-card__text {
+  margin: 0 0 22px;
+  color: #8f887f;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-form__field {
+  display: grid;
+  gap: 7px;
+}
+
+.contact-form__field label {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8f887f;
+}
+
+.contact-form__field input,
+.contact-form__field textarea {
+  width: 100%;
+  border: 1px solid rgba(205, 187, 168, 0.9);
+  background: #ffffff;
+  color: #003273;
+  padding: 13px 15px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form__field input:focus,
+.contact-form__field textarea:focus {
+  border-color: #003273;
+  box-shadow: 0 0 0 3px rgba(0, 50, 115, 0.08);
+}
+
+.contact-form__field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.contact-form__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 13px 26px;
+  border: 1px solid #003273;
+  background: #003273;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+}
+
+.contact-form__button:hover {
+  background: transparent;
+  color: #003273;
+}
+
+.contact-form__button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.contact-form__status {
+  margin: 0;
+  min-height: 22px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.contact-form__status.is-success {
+  color: #1f7a3a;
+}
+
+.contact-form__status.is-error {
+  color: #b3261e;
+}
+
+@media (max-width: 768px) {
+  .contact-form-card {
+    margin-top: 30px;
+    padding: 24px 20px;
+  }
+
+  .contact-form-card__title {
+    font-size: 24px;
+  }
+
+  .contact-form__button {
+    width: 100%;
+  }
+}

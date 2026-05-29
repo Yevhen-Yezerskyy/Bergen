@@ -2,6 +2,13 @@ from django.shortcuts import render
 from django.urls import reverse
 from urllib.parse import parse_qs, unquote
 
+import logging
+
+from django.conf import settings
+from django.core.mail import send_mail
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+
 SITE_URL = "https://bergen-immobilienservice.com"
 CONSENT_COOKIE_NAME = "bergen_cookie_consent_v4"
 BANNER_CLOSED_COOKIE_NAME = "bergen_cookie_banner_closed_v4"
@@ -79,4 +86,57 @@ def sitemap_xml(request):
         "sitemap.xml",
         {"items": items},
         content_type="application/xml; charset=utf-8",
+    )
+
+logger = logging.getLogger(__name__)
+
+
+@require_POST
+def contact_form_submit(request):
+    name = request.POST.get("name", "").strip()
+    phone = request.POST.get("phone", "").strip()
+    message = request.POST.get("message", "").strip()
+
+    if not name or not phone:
+        return JsonResponse(
+            {
+                "ok": False,
+                "message": "Bitte füllen Sie Name und Telefonnummer aus."
+            },
+            status=400
+        )
+
+    email_subject = "Neue Anfrage von bergen-immobilienservice.com"
+    email_body = f"""Neue Anfrage über die Website:
+
+Name: {name}
+Telefon: {phone}
+
+Nachricht:
+{message if message else "-"}
+"""
+
+    try:
+        send_mail(
+            subject=email_subject,
+            message=email_body,
+            from_email=getattr(settings, "DEFAULT_FROM_EMAIL", "noreply@bergen-immobilienservice.com"),
+            recipient_list=["service@bergen-immobilienservice.com"],
+            fail_silently=False,
+        )
+    except Exception:
+        logger.exception("Contact form email sending failed")
+        return JsonResponse(
+            {
+                "ok": False,
+                "message": "Die Anfrage konnte nicht gesendet werden. Bitte rufen Sie uns direkt an."
+            },
+            status=500
+        )
+
+    return JsonResponse(
+        {
+            "ok": True,
+            "message": "Vielen Dank. Ihre Anfrage wurde gesendet."
+        }
     )

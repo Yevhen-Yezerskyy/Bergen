@@ -124,3 +124,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'static_collected'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://bergen-immobilienservice.com",
+    "https://www.bergen-immobilienservice.com",
+    "https://dev.bergen-immobilienservice.com",
+]
