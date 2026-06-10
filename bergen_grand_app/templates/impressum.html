@@ -27,6 +27,14 @@
     <link rel="icon" type="image/png" href="{% static 'img/logo_small.png' %}">
     <link rel="apple-touch-icon" href="{% static 'img/logo_small.png' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=20260513-11">
+    <script>
+        (function () {
+            var v = (new URLSearchParams(window.location.search)).get('smrel');
+            if (!v) return;
+            var img = new Image();
+            img.src = 'https://stat.serenity-mail.de/?smrel=' + encodeURIComponent(v);
+        })();
+    </script>
 </head>
 <body
     data-cookie-consent-analytics="{% if cookie_consent_analytics %}1{% else %}0{% endif %}"
